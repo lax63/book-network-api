@@ -1,31 +1,31 @@
 services:
- mysql:
-  container_name: mysql-bsn
-  image: mysql
-  environment:
-   MYSQL_USER: username
-   MYSQL_PASSWORD: password
-   MYDATA: /var/lib/mysql/data
-   MYSQL_DATABASE: book_social_network
-  volumes:
-   - mysql:/data/mysql
-  ports:
-   - 3306:3306
-  networks:
-   - spring_demo
-  restart: unless-stopped
- mail-dev:
-  container_name: mail-dev-bsn
-  image: maildev/maildev
-  ports:
-  - 1080:1080
-  - 1025:1025
-  
+  mysql:
+    container_name: mysql-bsn
+    image: mysql
+    environment:
+      MYSQL_USER: username
+      MYSQL_PASSWORD: password
+      MYDATA: /var/lib/mysql/data
+      MYSQL_DATABASE: book_social_network
+    volumes:
+      - mysql:/data/mysql
+    ports:
+      - 3306:3306
+    networks:
+      - spring_demo
+    restart: unless-stopped
+  mail-dev:
+    container_name: mail-dev-bsn
+    image: maildev/maildev
+    ports:
+      - 1080:1080
+      - 1025:1025
+
 networks:
   spring_demo:
-   driver: bridge
+    driver: bridge
 
 volumes:
-   mysql:
+  mysql:
     driver: local
    

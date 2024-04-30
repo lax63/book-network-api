@@ -1,0 +1,40 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3307/book_social_network
+    username: username
+    password: password
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        formate-sql: true
+    database: mysql
+    
+    #database-platform: org.hibernate.dialect.MySQLDialect
+
+  mail:
+    host: localhost
+    port: 1025
+    username: lax
+    password: lax
+    properties:
+      mail:
+        smtp:
+          trust: "*"
+        auth: true
+        starttls:
+          enable: true
+        connectiontimeout: 5000
+        timeout: 3000
+        writetimeout: 5000
+application:
+  security:
+    jwt:
+      secret-key: 9265b262a4d6ce3e043b4ddd8163639c5ed624317a7e8946e13f0f3ea6a01eb7
+      expiration: 8000000
+  mailing:
+    frontend:
+      activation-url: http://localhost:4200/activate-account
